@@ -64,6 +64,8 @@ TEST(FileLockTest, ProcessesAcquireLock) {
 
 int main(int argc, char **argv) {
   testing::InitGoogleTest(&argc, argv);
+  // address warning: WARNING: Logging before InitGoogleLogging() is written to STDERR
+  google::InitGoogleLogging("/tmp/");
   google::SetStderrLogging(google::INFO);
 
   return RUN_ALL_TESTS();
